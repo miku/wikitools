@@ -54,7 +54,7 @@ Convert wikipedia dump into JSON without much additional parsing.
 
     $ wikitojson -h
       -cpuprofile="": write cpu profile to file
-      -filter="^file:.*|^talk:.*|^special:.*|^wikipedia:.*|^wiktionary:.*|^user:.*|^user_talk:.*": regex for pages to skip
+      -filter="^file:.*|^talk:.*|^special:.*|^wikipedia:...": regex for pages to skip
       -v=false: prints current program version
       -w=4: number of workers
 
