@@ -30,7 +30,7 @@ Extract category data from a wikipedia dump.
 wikinorm
 --------
 
-Extract authority control data from a wikipedia dump.
+Extract raw authority control data from a wikipedia dump.
 
     $ wikinorm -h
       -cpuprofile="": write cpu profile to file
