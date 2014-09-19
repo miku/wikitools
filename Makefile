@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-TARGETS = wikicats wikinorm
+TARGETS = wikicats wikinorm wikidatatojson wikitojson
 
 # http://docs.travis-ci.com/user/languages/go/#Default-Test-Script
 test:
@@ -40,6 +40,12 @@ wikicats:
 
 wikinorm:
 	go build cmd/wikinorm/wikinorm.go
+
+wikidatatojson:
+	go build cmd/wikidatatojson/wikidatatojson.go
+
+wikitojson:
+	go build cmd/wikitojson/wikitojson.go
 
 # ==== packaging
 

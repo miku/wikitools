@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const Version = "0.1.0"
+const Version = "0.1.2"
 
 type Redirect struct {
 	Title string `xml:"title,attr" json:"title"`
@@ -73,10 +73,19 @@ func ExtractAuthorityControl(page *Page, filter, pattern *regexp.Regexp) []strin
 	return result
 }
 
-// FanInWriter writes the channel content to the writer
-func FanInWriter(writer io.Writer, in chan *[]string, done chan bool) {
+// FanInWriter writes the string arrays as tab separated values to the writer
+func FanInTabWriter(writer io.Writer, in chan *[]string, done chan bool) {
 	for fields := range in {
 		writer.Write([]byte(strings.Join(*fields, "\t")))
+		writer.Write([]byte("\n"))
+	}
+	done <- true
+}
+
+// FanInLineWriter writes the strings to the writer
+func FanInLineWriter(writer io.Writer, in chan *string, done chan bool) {
+	for s := range in {
+		writer.Write([]byte(*s))
 		writer.Write([]byte("\n"))
 	}
 	done <- true
