@@ -31,7 +31,7 @@ func WikidataJsonConverter(in chan *wikitools.Page, out chan *string, filter *re
 			dec.UseNumber()
 
 			if err := dec.Decode(&container); err == io.EOF {
-				break
+				continue
 			} else if err != nil {
 				fmt.Errorf("%s\n", err)
 				continue
