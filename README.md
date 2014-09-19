@@ -42,7 +42,7 @@ Extract authority control data from a wikipedia dump.
     $ wikinorm -pattern "Normdaten" dewiki-dump.xml
     Alan Smithee    {{Normdaten|TYP=p|GND=123396956|VIAF=57519787}}
     Actionfilm  {{Normdaten|TYP=s|GND=4140847-0}}
-    Al Pacino   {{Normdaten|TYP=p|GND=119070243|LCCN=n/85/138113|NDL=00621247|VIAF=85098059}}
+    Al Pacino   {{Normdaten|TYP=p|GND=119070243|LCCN=n/85/138113|NDL=00621247}}
     Alkohole    {{Normdaten|TYP=s|GND=4141899-2}}
     Aluminium   {{Normdaten|TYP=s|GND=4001573-7|LCCN=sh/85/003956|NDL=00560358}}
     ...
@@ -453,9 +453,9 @@ Convert wikidata dump into JSON.
           "pt": "continente",
           "pt-br": "continente",
           "ro": "continent",
-          "ru": "второй по площади континент после Евразии,омываемый Средиземным морем с севера",
+          "ru": "второй по площади континент после Евразии,омываемый ...",
           "sv": "världsdel",
-          "ta": "உலகின் இரண்டாவது மிகப்பெரிய மற்றும் அதிக மக்கள் தொகை கொண்ட கண்டம்",
+          "ta": "உலகின் இரண்டாவது மிகப்பெரிய மற்றும் அதிக ...",
           "ty": "fenua ra’ituāta’a",
           "uk": "другий за площею і населенням материк у світі, після Євразії",
           "zh": "七大洲之一",
