@@ -90,7 +90,7 @@ func main() {
 	}
 
 	// output writer
-	go wikitools.FanInWriter(os.Stdout, results, done)
+	go wikitools.FanInTabWriter(os.Stdout, results, done)
 
 	// XML decoder
 	decoder := xml.NewDecoder(handle)
