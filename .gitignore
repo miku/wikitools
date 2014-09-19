@@ -2,3 +2,4 @@
 *.rpm
 ./wikicats
 ./wikinorm
+debian/wikitools/usr
