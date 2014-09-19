@@ -3,6 +3,11 @@ wikitools
 
 Few tools for working with wikipedia XML dumps.
 
+* [wikicats](https://github.com/miku/wikitools#wikicats)
+* [wikinorm](https://github.com/miku/wikitools#wikinorm)
+* [wikitojson](https://github.com/miku/wikitools#wikitojson)
+* [wikidatatojson](https://github.com/miku/wikitools#wikidatatojson)
+
 Installation
 ------------
 
