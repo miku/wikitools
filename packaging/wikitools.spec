@@ -1,6 +1,6 @@
 Summary:    Few tools for working with wikipedia XML dumps.
 Name:       wikitools
-Version:    0.1.2
+Version:    0.1.3
 Release:    0
 License:    MIT
 BuildArch:  x86_64
@@ -53,6 +53,10 @@ rm -rf %{_topdir}/BUILD/%{name}
 
 
 %changelog
+* Fri Sep 19 2014 Martin Czygan
+- 0.1.3 release
+- fix deadlock bug on messy data in wikidatatojson
+
 * Fri Sep 19 2014 Martin Czygan
 - 0.1.1 release
 - added wikidata to json converter

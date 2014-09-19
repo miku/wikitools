@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const Version = "0.1.2"
+const Version = "0.1.3"
 
 type Redirect struct {
 	Title string `xml:"title,attr" json:"title"`
