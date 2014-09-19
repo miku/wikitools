@@ -47,6 +47,29 @@ Extract raw authority control data from a wikipedia dump.
     Aluminium   {{Normdaten|TYP=s|GND=4001573-7|LCCN=sh/85/003956|NDL=00560358}}
     ...
 
+wikitojson
+----------
+
+Convert wikipedia dump into JSON without much additional parsing.
+
+    $ wikitojson -h
+      -cpuprofile="": write cpu profile to file
+      -filter="^file:.*|^talk:.*|^special:.*|^wikipedia:.*|^wiktionary:.*|^user:.*|^user_talk:.*": regex for pages to skip
+      -v=false: prints current program version
+      -w=4: number of workers
+
+    $ wikitojson dewiki-dump.xml
+    ...
+    {
+      "title": "Felsit",
+      "ctitle": "",
+      "redirect": {
+        "title": ""
+      },
+      "text": "'''Felsite''' sind allgemein helle [[Magmatisches Gestein|magmatische]] ..."
+    }
+    ...
+
 wikidatatojson
 --------------
 

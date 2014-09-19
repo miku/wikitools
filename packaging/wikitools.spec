@@ -1,6 +1,6 @@
 Summary:    Few tools for working with wikipedia XML dumps.
 Name:       wikitools
-Version:    0.1.1
+Version:    0.1.2
 Release:    0
 License:    MIT
 BuildArch:  x86_64
@@ -29,8 +29,10 @@ mkdir -p $RPM_BUILD_ROOT/usr/local/sbin
 # put the files in to the relevant directories.
 # the argument on -m is the permissions expressed as octal. (See chmod man page for details.)
 install -m 755 wikicats $RPM_BUILD_ROOT/usr/local/sbin
-install -m 755 wikinorm $RPM_BUILD_ROOT/usr/local/sbin
 install -m 755 wikidatatojson $RPM_BUILD_ROOT/usr/local/sbin
+install -m 755 wikinorm $RPM_BUILD_ROOT/usr/local/sbin
+install -m 755 wikitojson $RPM_BUILD_ROOT/usr/local/sbin
+
 
 %post
 # the post section is where you can run commands after the rpm is installed.
@@ -45,8 +47,9 @@ rm -rf %{_topdir}/BUILD/%{name}
 %files
 %defattr(-,root,root)
 /usr/local/sbin/wikicats
-/usr/local/sbin/wikinorm
 /usr/local/sbin/wikidatatojson
+/usr/local/sbin/wikinorm
+/usr/local/sbin/wikitojson
 
 
 %changelog
