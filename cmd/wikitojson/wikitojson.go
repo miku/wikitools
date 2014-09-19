@@ -11,7 +11,6 @@ import (
 	"runtime"
 	"runtime/pprof"
 	"sync"
-	"time"
 
 	"github.com/miku/wikitools"
 )
@@ -129,11 +128,5 @@ func main() {
 	close(queue)
 	wg.Wait()
 	close(results)
-	select {
-	case <-time.After(1e9):
-		break
-	case <-done:
-		break
-	}
-
+	<-done
 }
