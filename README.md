@@ -3,6 +3,13 @@ wikitools
 
 Few tools for working with wikipedia XML dumps.
 
+Installation
+------------
+
+Commands are go-getable.
+
+    $ go get github.com/miku/wikitools/cmd/{wikicats,wikinorm,...}
+
 wikicats
 --------
 
