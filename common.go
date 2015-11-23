@@ -1,3 +1,26 @@
+// Copyright 2014 by Leipzig University Library, http://ub.uni-leipzig.de
+//                   The Finc Authors, http://finc.info
+//                   Martin Czygan, <martin.czygan@uni-leipzig.de>
+//
+// This file is part of some open source application.
+//
+// Some open source application is free software: you can redistribute
+// it and/or modify it under the terms of the GNU General Public
+// License as published by the Free Software Foundation, either
+// version 3 of the License, or (at your option) any later version.
+//
+// Some open source application is distributed in the hope that it will
+// be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @license GPL-3.0+ <http://spdx.org/licenses/GPL-3.0+>
+//
+//
+// Package wikitools provides support for wikitools command line tools.
 package wikitools
 
 import (
@@ -7,13 +30,15 @@ import (
 	"strings"
 )
 
+// Version of wikitools.
 const Version = "0.1.3"
 
+// Redirect title.
 type Redirect struct {
 	Title string `xml:"title,attr" json:"title"`
 }
 
-// Page as it occurs on Wikipedia
+// Page as it occurs on Wikipedia.
 type Page struct {
 	Title          string   `xml:"title" json:"title"`
 	CanonicalTitle string   `xml:"ctitle" json:"ctitle"`
@@ -21,8 +46,7 @@ type Page struct {
 	Text           string   `xml:"revision>text" json:"text"`
 }
 
-// WikidataPage as it occurs on Wikidata, content will be turned from a string
-// into a substructure with -d switch
+// WikidataPage as it occurs on Wikidata.
 type WikidataPage struct {
 	Title          string      `xml:"title" json:"title"`
 	CanonicalTitle string      `xml:"ctitle" json:"ctitle"`
@@ -30,7 +54,7 @@ type WikidataPage struct {
 	Content        interface{} `json:"content"`
 }
 
-// CanonicalizeTitle unifies a wikipedia page title
+// CanonicalizeTitle unifies a wikipedia page title.
 func CanonicalizeTitle(title string) string {
 	can := strings.ToLower(title)
 	can = strings.Replace(can, " ", "_", -1)
@@ -38,7 +62,7 @@ func CanonicalizeTitle(title string) string {
 	return can
 }
 
-// ExtractPageCategory returns a slice of categories for a given page
+// ExtractPageCategory returns a slice of categories for a given page.
 func ExtractPageCategory(page *Page, filter, pattern *regexp.Regexp) []string {
 	var cats []string
 	m := filter.MatchString(CanonicalizeTitle(page.Title))
@@ -59,7 +83,7 @@ func ExtractPageCategory(page *Page, filter, pattern *regexp.Regexp) []string {
 	return cats
 }
 
-// ExtractPageAuthorityControl extract raw authority control data from a page
+// ExtractPageAuthorityControl extract raw authority control data from a page.
 func ExtractAuthorityControl(page *Page, filter, pattern *regexp.Regexp) []string {
 	m := filter.MatchString(CanonicalizeTitle(page.Title))
 	var result []string
@@ -73,7 +97,7 @@ func ExtractAuthorityControl(page *Page, filter, pattern *regexp.Regexp) []strin
 	return result
 }
 
-// FanInWriter writes the string arrays as tab separated values to the writer
+// FanInWriter writes the string arrays as tab separated values to the writer.
 func FanInTabWriter(writer io.Writer, in chan *[]string, done chan bool) {
 	for fields := range in {
 		writer.Write([]byte(strings.Join(*fields, "\t")))
@@ -82,7 +106,7 @@ func FanInTabWriter(writer io.Writer, in chan *[]string, done chan bool) {
 	done <- true
 }
 
-// FanInLineWriter writes the strings to the writer
+// FanInLineWriter writes the strings to the writer.
 func FanInLineWriter(writer io.Writer, in chan *string, done chan bool) {
 	for s := range in {
 		writer.Write([]byte(*s))
