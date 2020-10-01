@@ -1,4 +1,4 @@
-wikitools
+## wikitools
 =========
 
 Few tools for working with wikipedia XML dumps.
@@ -8,14 +8,14 @@ Few tools for working with wikipedia XML dumps.
 * [wikitojson](https://github.com/miku/wikitools#wikitojson)
 * [wikidatatojson](https://github.com/miku/wikitools#wikidatatojson)
 
-Installation
+## Installation
 ------------
 
 Commands are go-getable.
 
     $ go get github.com/miku/wikitools/cmd/{wikicats,wikinorm,...}
 
-wikicats
+## wikicats
 --------
 
 Extract category data from a wikipedia dump.
@@ -23,7 +23,7 @@ Extract category data from a wikipedia dump.
     $ wikicats -h
       -cpuprofile="": write cpu profile to file
       -filter="^file:.*|^talk:.*|^special:.*|^wikipedia...": regex for pages to skip
-      -pattern="Category": word for category, e.g. in German: 'Kategorie'
+      -pattern="Category": word for category, e.g. in : 'Kategorie'
       -v=false: prints current program version
       -w=4: number of workers
 
@@ -39,7 +39,7 @@ Extract category data from a wikipedia dump.
     Ang Lee Oscarpreisträger
     ...
 
-wikinorm
+## wikinorm
 --------
 
 Extract raw authority control data from a wikipedia dump.
@@ -47,7 +47,7 @@ Extract raw authority control data from a wikipedia dump.
     $ wikinorm -h
       -cpuprofile="": write cpu profile to file
       -filter="^file:.*|^talk:.*|^special:.*|^wikipedia...": regex for pages to skip
-      -pattern="Authority Control": word for Authority Control, e.g. in German: 'Normdaten'
+      -pattern="Authority Control": word for Authority Control, e.g. in : 'Normdaten'
       -v=false: prints current program version
       -w=4: number of workers
 
@@ -59,7 +59,7 @@ Extract raw authority control data from a wikipedia dump.
     Aluminium   {{Normdaten|TYP=s|GND=4001573-7|LCCN=sh/85/003956|NDL=00560358}}
     ...
 
-wikitojson
+## wiki to json
 ----------
 
 Convert wikipedia dump into JSON without much additional parsing.
@@ -82,7 +82,7 @@ Convert wikipedia dump into JSON without much additional parsing.
     }
     ...
 
-wikidatatojson
+## wikidata to json
 --------------
 
 Convert wikidata dump into JSON.
@@ -1877,3 +1877,6 @@ Convert wikidata dump into JSON.
         }
       }
     }
+    
+    
+   #### THANK YOU
